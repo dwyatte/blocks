@@ -14,7 +14,8 @@ requirements = [
 ]
 
 extras_require = {
-    "pq": ["pyarrow"],
+    # pyarrow 2.0.0 has a regression with reading gzipped parquet files
+    "pq": ["pyarrow<2.0.0"],
     "avro": ["fastavro"],
     "tests": ["pytest", "pytest-cov", "delegator.py", "flake8"],
     "doc": ["sphinx", "numpydoc", "sphinx-rtd-theme"],
